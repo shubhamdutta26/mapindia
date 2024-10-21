@@ -123,14 +123,14 @@ codes <- function(state, district = c()) {
 #' code11_info("2")
 #' code11_info(c("02", "03", "04"))
 #'
-#' code11_info(2016)
-#' code11_info(c("02016", "02017"), sortAndRemoveDuplicates = TRUE)
+#' code11_info(19335)
+#' code11_info(c("19335", "19337"), sortAndRemoveDuplicates = TRUE)
 #'
 #' @rdname code11_info
 #' @export
 code11_info <- function(code11, sortAndRemoveDuplicates = FALSE) {
   if (missing(code11)) {
-    code11_info.character(mapindiatools::fetch_codes())
+    mapindiatools::fetch_codes()
   } else {
     UseMethod("code11_info", code11)
   }
@@ -204,5 +204,5 @@ get_code11_info <- function(code11, sortAndRemoveDuplicates) {
 static_merge <- function(x, y, ...) {
   x$join_id_ <- seq_len(nrow(x))
   joined <- merge(x = x, y = y, sort = FALSE, ...)
-  joined[order(joined$join_id), colnames(joined) != "join_id_"]
+  joined[order(joined$join_id_), colnames(joined) != "join_id_"]
 }
