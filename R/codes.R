@@ -34,7 +34,7 @@
 #' If both `state` and `district` are omitted, the entire list of available
 #' codes are returned, sorted by the state's abbreviation.
 #'
-#' @seealso [code11_info()]
+#' @seealso [code_info()]
 #'
 #'
 #' @examples
@@ -119,12 +119,12 @@ codes <- function(state, district = c()) {
 #' @seealso [codes()]
 #'
 #' @examples
-#' code11_info(2)
-#' code11_info("2")
-#' code11_info(c("02", "03", "04"))
+#' code_info(2)
+#' code_info("2")
+#' code_info(c("02", "03", "04"))
 #'
-#' code11_info(19335)
-#' code11_info(c("19335", "19337"), sortAndRemoveDuplicates = TRUE)
+#' code_info(19335)
+#' code_info(c("19335", "19337"), sortAndRemoveDuplicates = TRUE)
 #'
 #' @rdname code_info
 #' @export

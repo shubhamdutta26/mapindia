@@ -57,5 +57,5 @@ codes(state = "Uttarakhand", district = "Nainital")
 codes(state = "RJ", district = "Pratapgarh")
 }
 \seealso{
-[code11_info()]
+[code_info()]
 }

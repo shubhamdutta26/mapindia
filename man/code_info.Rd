@@ -33,12 +33,12 @@ A data frame with the states or counties and the associated codes.
 Retrieve states or districts using codes
 }
 \examples{
-code11_info(2)
-code11_info("2")
-code11_info(c("02", "03", "04"))
+code_info(2)
+code_info("2")
+code_info(c("02", "03", "04"))
 
-code11_info(19335)
-code11_info(c("19335", "19337"), sortAndRemoveDuplicates = TRUE)
+code_info(19335)
+code_info(c("19335", "19337"), sortAndRemoveDuplicates = TRUE)
 
 }
 \seealso{
