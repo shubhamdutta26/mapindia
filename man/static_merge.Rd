@@ -7,7 +7,7 @@
 static_merge(x, y, ...)
 }
 \description{
-Internal function used by [code11_info()].
+Internal function used by [code_info()].
 }
 \seealso{
 \url{https://stackoverflow.com/a/61560405/7264964}

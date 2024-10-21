@@ -126,78 +126,82 @@ codes <- function(state, district = c()) {
 #' code11_info(19335)
 #' code11_info(c("19335", "19337"), sortAndRemoveDuplicates = TRUE)
 #'
-#' @rdname code11_info
+#' @rdname code_info
 #' @export
-code11_info <- function(code11, sortAndRemoveDuplicates = FALSE) {
+code_info <- function(code11, sortAndRemoveDuplicates = FALSE) {
   if (missing(code11)) {
-    mapindiatools::fetch_codes()
+    df <- mapindiatools::fetch_codes()
+    colnames(df)[colnames(df) == "code11"] <- "code"
+    return(df)
   } else {
-    UseMethod("code11_info", code11)
+    UseMethod("code_info", code11)
   }
 }
 
-#' @rdname code11_info
+#' @rdname code_info
 #' @export
-code11_info.numeric <- function(code11, sortAndRemoveDuplicates = FALSE) {
+code_info.numeric <- function(code11, sortAndRemoveDuplicates = FALSE) {
   if (all(code11 >= 1001 & code11 <= 39496)) {
     code11_ <- sprintf("%05d", code11)
   } else if (all(code11 >= 1 & code11 <= 38)) {
     code11_ <- sprintf("%02d", code11)
   } else {
-    stop("Invalid Code11 code(s), must be either 2 digit (states) or 5 digit (districts), but not both.")
+    rlang::abort("Invalid Code11 code(s), must be either 2 digit (states) or 5 digit (districts), but not both.")
   }
 
-  get_code11_info(code11_, sortAndRemoveDuplicates)
+  get_code_info(code11_, sortAndRemoveDuplicates)
 }
 
-#' @rdname code11_info
+#' @rdname code_info
 #' @export
-code11_info.character <- function(code11, sortAndRemoveDuplicates = FALSE) {
+code_info.character <- function(code11, sortAndRemoveDuplicates = FALSE) {
   if (all(nchar(code11) %in% 4:5)) {
     code11_ <- sprintf("%05s", code11)
   } else if (all(nchar(code11) %in% 1:2)) {
     code11_ <- sprintf("%02s", code11)
   } else {
-    stop("Invalid Code11 code, must be either 2 digit (states) or 5 digit (districts), but not both.")
+    rlang::abort("Invalid Code11 code, must be either 2 digit (states) or 5 digit (districts), but not both.")
   }
 
-  get_code11_info(code11_, sortAndRemoveDuplicates)
+  get_code_info(code11_, sortAndRemoveDuplicates)
 }
 
 #' Gets code11 info for either states or districts depending on input.
-#' Helper function for S3 method [code11_info()].
+#' Helper function for S3 method [code_info()].
 #' @keywords internal
-get_code11_info <- function(code11, sortAndRemoveDuplicates) {
-  if (all(nchar(code11) == 2)) {
+get_code_info <- function(code, sortAndRemoveDuplicates) {
+  if (all(nchar(code) == 2)) {
     df <- mapindiatools::fetch_codes()
     columns <- c("abbr", "code11", "stname")
-  } else if (all(nchar(code11) == 5)) {
+  } else if (all(nchar(code) == 5)) {
     df <- mapindiatools::fetch_codes("districts")
     columns <- c("stname", "abbr", "dtname", "code11")
   }
 
   if (sortAndRemoveDuplicates) {
-    result <- df[df$code11 %in% code11, ]
+    result <- df[df$code11 %in% code, ]
   } else {
-    result <- static_merge(data.frame(code11 = code11), df)
+    result <- static_merge(data.frame(code11 = code), df)
   }
 
   if (nrow(result) == 0) {
     # Present warning if no results found.
-    warning(paste("Code11 code(s)", toString(code11), "not found, returned 0 results."))
-  } else if (!all(code11 %in% result$code11)) {
+    rlang::warn(paste("Code(s)", toString(code), "not found, returned 0 results."))
+  } else if (!all(code %in% result$code11)) {
     # Present warning if any FIPS codes included are not found.
-    excluded_code11 <- code11[which(!code11 %in% result$code11)]
-    warning(paste("Code11 code(s)", toString(excluded_code11), "not found"))
+    excluded_code <- code[which(!code %in% result$code11)]
+    rlang::warn(paste("Code(s)", toString(excluded_code), "not found."))
   }
 
   rownames(result) <- NULL
-  result[, columns]
+  result <- result[, columns]
+  colnames(result)[colnames(result) == "code11"] <- "code"
+  return(result)
 }
 
 #' Merge while maintaining original sort order
 #'
-#' Internal function used by [code11_info()].
+#' Internal function used by [code_info()].
 #'
 #' @seealso \url{https://stackoverflow.com/a/61560405/7264964}
 #' @keywords internal

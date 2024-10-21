@@ -6,7 +6,7 @@ example_data <- data.frame(
 p <- plot_map("districts", fill = "red")
 q <- plot_map(data = statepop, values = "pop_2023", color = "blue")
 r <- plot_map(data = example_data, linewidth = 0.8)
-s <- plot_map(include = c("WB", "TN", "AP"), labels = TRUE, label_color = "blue")
+s <- plot_map(include = c("UP", "RJ", "NCT"), labels = TRUE, label_color = "blue")
 t <- plot_map(regions = "districts", include = "WB", labels = TRUE, fill = "yellow", linewidth = 0.6)
 u <- plot_map(include = .east, exclude = "WB", labels = TRUE)
 v <- plot_map("state", labels = TRUE, label_size = 2)
@@ -41,7 +41,7 @@ test_that("correct data is used", {
   r_map_data <- map_with_data(example_data)
   expect_identical(r$data, r_map_data)
 
-  s_map_data <- map_india(regions = "states", include = c("AP", "WB", "TN"))
+  s_map_data <- map_india(regions = "states", include = c("UP", "RJ", "NCT"))
   expect_identical(s$data, s_map_data)
 
   t_map_data <- map_india(regions = "districts", include = "WB")
@@ -54,14 +54,10 @@ test_that("correct data is used", {
   expect_identical(v$data, v_map_data)
 })
 
-# test_that("plots are stable", {
-  # vdiffr::expect_doppelganger("State population map with blue outlines", q)
-  # vdiffr::expect_doppelganger("Example data state map with custom linewidth", r)
-  # vdiffr::expect_doppelganger("States map with labels", s)
-  # vdiffr::expect_doppelganger("Arizona county map with labels and fill", t)
-  # vdiffr::expect_doppelganger("Eastern state map excluding West Bengal", u)
-  # vdiffr::expect_doppelganger("State map with labels", v)
-# })
+test_that("plots are stable", {
+  vdiffr::expect_doppelganger("State population map in blue", q)
+  vdiffr::expect_doppelganger("Example data state map with custom linewidth", r)
+})
 
 test_that("layer parameters are correct", {
   expect_s3_class(p$layers[[1]], "ggproto")
