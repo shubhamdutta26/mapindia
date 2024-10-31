@@ -36,56 +36,47 @@ map_with_data <- function(data,
                           exclude = c(),
                           na = NA) {
 
+  # Validate input data frame
   if (!is.data.frame(data)) {
     rlang::abort("`data` must be a data frame.")
   }
 
+  # Handle empty data case
   if (nrow(data) == 0) {
-    if (length(include) == 0) {
-      region_type <- "state"
-    } else {
-      region_type <- ifelse(nchar(include[1]) == 2, "state", "district")
-    }
-
+    region_type <- if (length(include) == 0 || nchar(include[1]) == 2) "state" else "district"
     rlang::warn(paste("`data` is empty, returning basic", region_type, "India map data frame."))
     return(mapindia::map_india(regions = region_type, include = include, exclude = exclude))
   }
 
-  if (!(values %in% names(data))) {
+  # Validate values column existence
+  if (!values %in% names(data)) {
     rlang::abort(paste0("\"", values, "\" column not found in `data`."))
   }
 
-  if ("code" %in% names(data)) {
-    # do nothing
-  } else if ("state" %in% names(data)) {
-    # convert to code11
-    data$code <- mapindia::codes(data$state)
-  } else {
-    # error
-    rlang::abort("`data` must be a data.frame containing either a `state` or `code` column.")
+  # Ensure 'code' column exists; derive from 'state' if absent
+  if (!"code" %in% names(data)) {
+    if ("state" %in% names(data)) {
+      data$code <- mapindia::codes(data$state)
+    } else {
+      rlang::abort("`data` must contain either a `state` or `code` column.")
+    }
   }
 
-  data$code11 <- data$code
+  # Prepare `code11` and set region type
+  data$code11 <- sprintf(ifelse(nchar(data$code[1]) <= 2, "%02d", "%05d"), as.numeric(data$code))
+  region_type <- if (nchar(data$code11[1]) <= 2) "state" else "district"
 
-  data$code11 <- as.character(data$code11)
-
-  region_type <- ifelse(nchar(data$code11[1]) <= 2, "state", "district")
+  # Fetch map data and merge with input data
   map_df <- mapindia::map_india(regions = region_type, include = include, exclude = exclude)
 
-  # Remove columns in data that are already in map_df
-  data$abbr <- NULL
-  data$stname <- NULL
-  data$dtname <- NULL
-  data$geom <- NULL
+  # Remove any columns in data that conflict with map_df columns
+  data <- data[!names(data) %in% c("abbr", "stname", "dtname", "geom")]
 
-  padding <- ifelse(region_type == "state", 2, 5)
-  data$code11 <- sprintf(paste0("%0", padding, "d"), as.numeric(data$code11))
-
+  # Merge and handle NA values
   result <- merge(map_df, data, by = "code11", all.x = TRUE, sort = FALSE)
-  result[is.na(result[, values]), values] <- na
+  result[[values]][is.na(result[[values]])] <- na
 
-  result <- result[, c(setdiff(names(result), names(data)), names(data))]
-
+  # Order results by region and specific attributes
   if (region_type == "state") {
     result <- result[order(result$stname), ]
   } else {
