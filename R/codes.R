@@ -120,7 +120,7 @@ codes <- function(state, district = c()) {
 #'
 #' @examples
 #' code_info(2)
-#' code_info("2")
+#' code_info("02")
 #' code_info(c("02", "03", "04"))
 #'
 #' code_info(19335)

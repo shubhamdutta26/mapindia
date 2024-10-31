@@ -1,4 +1,9 @@
 url: http://www.shubhamdutta.com/mapindia/
 template:
   bootstrap: 5
-
+  light-switch: true
+  theme: dracula
+  bslib:
+    base_font: {google: "Roboto"}
+    heading_font: {google: "Roboto Slab"}
+    code_font: {google: "JetBrains Mono"}
