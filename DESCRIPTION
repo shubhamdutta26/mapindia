@@ -1,15 +1,15 @@
 Type: Package
 Package: mapindia
-Title: Plot Map of Indian Subcontinent
-Version: 0.1.0
+Title: Plot Map of the Indian Subcontinent
+Version: 1.0.0
 Authors@R: 
     person("Shubham", "Dutta", , "shubhamdutta26@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0001-8484-0717"))
 Maintainer: Shubham Dutta <shubhamdutta26@gmail.com>
 Description: Get map data frames for the Indian subcontinent with different region
     levels (e.g., district, state). The package also offers convenience functions
-    for plotting choropleths, visualizing spatial data, and handling
-    state/district codes.
+    for plotting choropleths, visualizing spatial data, and handling state/district
+    codes.
 License: MIT + file LICENSE
 URL: https://github.com/shubhamdutta26/mapindia, https://www.shubhamdutta.com/mapindia/
 BugReports: https://github.com/shubhamdutta26/mapindia/issues
