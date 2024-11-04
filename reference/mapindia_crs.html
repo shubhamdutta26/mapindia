@@ -63,8 +63,49 @@ by the <code>plot_india</code> function.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">mapindia_crs</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
     </div>
 
+    <div class="section level2">
+    <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
+    <p>An `sf::st_crs` object representing the Coordinate Reference System (CRS)
+for India, specifically EPSG:4326 (WGS 84). This CRS uses latitude and longitude
+coordinates and is commonly used for geographic data.</p>
+    </div>
 
-  </main></div>
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">mapindia_crs</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Coordinate Reference System:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   User input: EPSG:4326 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   wkt:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> GEOGCRS["WGS 84",</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     ENSEMBLE["World Geodetic System 1984 ensemble",</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         MEMBER["World Geodetic System 1984 (Transit)"],</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         MEMBER["World Geodetic System 1984 (G730)"],</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         MEMBER["World Geodetic System 1984 (G873)"],</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         MEMBER["World Geodetic System 1984 (G1150)"],</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         MEMBER["World Geodetic System 1984 (G1674)"],</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         MEMBER["World Geodetic System 1984 (G1762)"],</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         MEMBER["World Geodetic System 1984 (G2139)"],</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         ELLIPSOID["WGS 84",6378137,298.257223563,</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             LENGTHUNIT["metre",1]],</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         ENSEMBLEACCURACY[2.0]],</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     PRIMEM["Greenwich",0,</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         ANGLEUNIT["degree",0.0174532925199433]],</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     CS[ellipsoidal,2],</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         AXIS["geodetic latitude (Lat)",north,</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             ORDER[1],</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             ANGLEUNIT["degree",0.0174532925199433]],</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         AXIS["geodetic longitude (Lon)",east,</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             ORDER[2],</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             ANGLEUNIT["degree",0.0174532925199433]],</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     USAGE[</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         SCOPE["Horizontal component of 3D system."],</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         AREA["World."],</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         BBOX[-90,-180,90,180]],</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     ID["EPSG",4326]]</span>
+</code></pre></div>
+    </div>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside></div>
 
 
     <footer><div class="pkgdown-footer-left">
