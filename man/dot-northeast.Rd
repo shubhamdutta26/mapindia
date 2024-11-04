@@ -19,6 +19,6 @@ See
 \url{https://en.wikipedia.org/wiki/North_Eastern_Council}
 }
 \examples{
-plot_map(include = .northeast, labels = TRUE)
+plot_india(include = .northeast, labels = TRUE)
 }
 \keyword{datasets}

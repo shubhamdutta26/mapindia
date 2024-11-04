@@ -20,6 +20,6 @@ See
 \url{https://en.wikipedia.org/wiki/Southern_Zonal_Council}
 }
 \examples{
-plot_map(include = .southsp, labels = TRUE)
+plot_india(include = .southsp, labels = TRUE)
 }
 \keyword{datasets}

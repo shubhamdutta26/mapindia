@@ -55,7 +55,7 @@ transformed_data <- mapindia_transform(data)
 # Plot transformed data on map
 library(ggplot2)
 
-plot_map() + geom_sf(
+plot_india() + geom_sf(
   data = transformed_data,
   aes(size = pop),
   color = "red", alpha = 0.5

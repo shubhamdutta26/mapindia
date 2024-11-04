@@ -3,13 +3,13 @@ example_data <- data.frame(
   values = c(5, 8, 7)
 )
 
-p <- plot_map("districts", fill = "red")
-q <- plot_map(data = statepop, values = "pop_2023", color = "blue")
-r <- plot_map(data = example_data, linewidth = 0.8)
-s <- plot_map(include = c("UP", "RJ", "NCT"), labels = TRUE, label_color = "blue")
-t <- plot_map(regions = "districts", include = "WB", labels = TRUE, fill = "yellow", linewidth = 0.6)
-u <- plot_map(include = .east, exclude = "WB", labels = TRUE)
-v <- plot_map("state", labels = TRUE, label_size = 2)
+p <- plot_india("districts", fill = "red")
+q <- plot_india(data = statepop, values = "pop_2023", color = "blue")
+r <- plot_india(data = example_data, linewidth = 0.8)
+s <- plot_india(include = c("UP", "RJ", "NCT"), labels = TRUE, label_color = "blue")
+t <- plot_india(regions = "districts", include = "WB", labels = TRUE, fill = "yellow", linewidth = 0.6)
+u <- plot_india(include = .east, exclude = "WB", labels = TRUE)
+v <- plot_india("state", labels = TRUE, label_size = 2)
 
 test_that("ggplot object is returned", {
   expect_s3_class(p, "ggplot")

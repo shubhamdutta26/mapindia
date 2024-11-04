@@ -1,0 +1,89 @@
+---
+title: "Create maps of the Indian subcontinent"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Create maps of the Indian subcontinent}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+The goal of mapindia is to simplify mapping of the Indian subcontinent. It has convenient functions for plotting choropleths, visualizing spatial data, and handling state/district codes.
+
+**Note:** The 3-digit district codes were merged with the 2-digit state codes to create a 5-digit district code.
+
+
+
+## Installation
+
+To install mapindia from CRAN:
+
+```{r}
+#| label: cran
+#| eval: false
+install.packages("mapindia")
+```
+
+
+You can install the development version of mapindia from [GitHub](https://github.com/) with:
+
+```{r}
+#| label: github
+#| eval: false
+# install.packages("pak")
+pak::pak("shubhamdutta26/mapindia")
+```
+
+## Example
+
+Plot a basic map of the Indian subcontinent with states and districts:
+
+```{r states-dist}
+library(mapindia)
+library(ggplot2)
+
+states <- plot_india("states") +
+  geom_sf(fill= "antiquewhite") +
+  theme(panel.grid.major = 
+          element_line(color = gray(.5), linetype = "dashed", linewidth = 0.2), 
+        panel.background = element_rect(fill = "aliceblue"))
+
+districts <- plot_india("districts") +
+  geom_sf(fill= "gray") +
+  theme(panel.grid.major = 
+          element_line(color = gray(.5), linetype = "dashed", linewidth = 0.2), 
+        panel.background = element_rect(fill = "aliceblue"))
+```
+
+Visualize zones such as the Central or Eastern Zonal Councils:
+
+```{r zones, warning=FALSE}
+central <- plot_india("states", include = .central, exclude = "UK", labels = TRUE) +
+  geom_sf(fill= "antiquewhite")
+
+east <- plot_india("states", include = .east, labels = FALSE)
+```
+
+Visualize individual states such as the West Bengal or Tamil Nadu:
+
+```{r states, warning=FALSE}
+mh <- plot_india("districts", include = "MH")
+
+tn <- plot_india("state", include = "Tamil Nadu", labels = FALSE)
+```
+
+Use your data for visualizations as well:
+
+```{r data, warning=FALSE}
+statepop2011 <- plot_india("states", data = statepop, values = "pop_2011") +
+  scale_fill_continuous(low = "blue", high = "yellow", guide = "none")
+
+wbpop2011 <- plot_india("districts", data = wb_2011, values = "pop_2011", include = "WB") +
+  scale_fill_continuous(low = "green", high = "red", guide = "none")
+```

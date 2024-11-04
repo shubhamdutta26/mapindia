@@ -40,7 +40,7 @@
 #' # Plot transformed data on map
 #' library(ggplot2)
 #'
-#' plot_map() + geom_sf(
+#' plot_india() + geom_sf(
 #'   data = transformed_data,
 #'   aes(size = pop),
 #'   color = "red", alpha = 0.5
@@ -116,7 +116,7 @@ perform_transform <- function(data, ...) {
 #' the canonical projection used by the \code{mapindia} package. It can
 #' be used to transform shape files, spatial points, spatial data
 #' frames, etc. to the same coordinate representation that is used
-#' by the \code{plot_map} function.
+#' by the \code{plot_india} function.
 #'
 #' @export
 mapindia_crs <- function() {

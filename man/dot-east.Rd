@@ -18,6 +18,6 @@ See
 \url{https://en.wikipedia.org/wiki/Eastern_Zonal_Council}
 }
 \examples{
-plot_map(include = .east, labels = TRUE)
+plot_india(include = .east, labels = TRUE)
 }
 \keyword{datasets}

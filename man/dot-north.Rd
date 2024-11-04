@@ -19,6 +19,6 @@ See
 \url{https://en.wikipedia.org/wiki/Northern_Zonal_Council}
 }
 \examples{
-plot_map(include = .north, labels = TRUE)
+plot_india(include = .north, labels = TRUE)
 }
 \keyword{datasets}

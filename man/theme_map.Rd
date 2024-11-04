@@ -7,7 +7,7 @@
 theme_map(base_size = 9, base_family = "")
 }
 \description{
-This creates a nice map theme for use in [plot_map()].
+This creates a nice map theme for use in [plot_india()].
 It originated from the `ggthemes` package located at this repository:
   \url{https://github.com/jrnold/ggthemes}.
 

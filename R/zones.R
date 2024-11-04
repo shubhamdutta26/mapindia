@@ -9,7 +9,7 @@
 #' \url{https://en.wikipedia.org/wiki/Northern_Zonal_Council}
 #'
 #' @examples
-#' plot_map(include = .north, labels = TRUE)
+#' plot_india(include = .north, labels = TRUE)
 #' @export
 .north <- c("CH", "NCT", "HR", "HP", "J&K", "LA", "PB", "RJ")
 
@@ -24,7 +24,7 @@
 #' \url{https://en.wikipedia.org/wiki/North_Eastern_Council}
 #'
 #' @examples
-#' plot_map(include = .northeast, labels = TRUE)
+#' plot_india(include = .northeast, labels = TRUE)
 #' @export
 .northeast <- c("AS", "AR", "MN", "ML", "MZ", "NL", "TR")
 
@@ -39,7 +39,7 @@
 #' \url{https://en.wikipedia.org/wiki/Central_Zonal_Council}
 #'
 #' @examples
-#' plot_map(include = .central, labels = TRUE)
+#' plot_india(include = .central, labels = TRUE)
 #' @export
 .central <- c("CG", "MP", "UK", "UP")
 
@@ -53,7 +53,7 @@
 #' \url{https://en.wikipedia.org/wiki/Eastern_Zonal_Council}
 #'
 #' @examples
-#' plot_map(include = .east, labels = TRUE)
+#' plot_india(include = .east, labels = TRUE)
 #' @export
 .east <- c("BR", "JH", "OR", "WB")
 
@@ -68,7 +68,7 @@
 #' \url{https://en.wikipedia.org/wiki/Western_Zonal_Council}
 #'
 #' @examples
-#' plot_map(include = .west, labels = TRUE)
+#' plot_india(include = .west, labels = TRUE)
 #' @export
 .west <- c("DN", "DD", "GA", "GJ", "MH")
 
@@ -83,7 +83,7 @@
 #' \url{https://en.wikipedia.org/wiki/Southern_Zonal_Council}
 #'
 #' @examples
-#' plot_map(include = .south, labels = TRUE)
+#' plot_india(include = .south, labels = TRUE)
 #' @export
 .south <- c("AP", "KA", "KL", "PY", "TN", "TG")
 
@@ -100,6 +100,6 @@
 #' \url{https://en.wikipedia.org/wiki/Southern_Zonal_Council}
 #'
 #' @examples
-#' plot_map(include = .southsp, labels = TRUE)
+#' plot_india(include = .southsp, labels = TRUE)
 #' @export
 .southsp <- c("AP", "KA", "KL", "PY", "TN", "TG", "AN", "LD")

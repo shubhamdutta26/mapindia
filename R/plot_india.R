@@ -35,22 +35,20 @@
 #' @seealso [indiamap], [ggplot2::theme()]
 #'
 #' @examples
-#' plot_map()
-#' plot_map(regions = "states")
-#' plot_map(regions = "districts")
-#' plot_map(regions = "state")
-#' plot_map(regions = "district")
+#' plot_india()
+#' plot_india(regions = "states")
+#' plot_india(regions = "districts")
 #'
 #' # Output is ggplot object so it can be extended
 #' # with any number of ggplot layers
 #' library(ggplot2)
-#' plot_map(include = c("GJ", "MH", "MP", "UP")) +
+#' plot_india(include = c("GJ", "MH", "MP", "UP")) +
 #'   labs(title = "Indian States")
 #'
 #'
 #' @importFrom rlang .data
 #' @export
-plot_map <- function(regions = c("states", "state", "districts", "district"),
+plot_india <- function(regions = c("states", "state", "districts", "district"),
                      include = c(),
                      exclude = c(),
                      data = data.frame(),
@@ -148,7 +146,7 @@ plot_map <- function(regions = c("states", "state", "districts", "district"),
 #' Convenient theme map
 #'
 #' @description
-#' This creates a nice map theme for use in [plot_map()].
+#' This creates a nice map theme for use in [plot_india()].
 #' It originated from the `ggthemes` package located at this repository:
 #'   \url{https://github.com/jrnold/ggthemes}.
 #'

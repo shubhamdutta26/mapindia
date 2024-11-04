@@ -19,6 +19,6 @@ See
 \url{https://en.wikipedia.org/wiki/Central_Zonal_Council}
 }
 \examples{
-plot_map(include = .central, labels = TRUE)
+plot_india(include = .central, labels = TRUE)
 }
 \keyword{datasets}

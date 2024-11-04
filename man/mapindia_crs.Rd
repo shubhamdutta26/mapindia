@@ -11,5 +11,5 @@ This coordinate reference system (CRS) represents
 the canonical projection used by the \code{mapindia} package. It can
 be used to transform shape files, spatial points, spatial data
 frames, etc. to the same coordinate representation that is used
-by the \code{plot_map} function.
+by the \code{plot_india} function.
 }
