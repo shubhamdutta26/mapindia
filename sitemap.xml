@@ -2,6 +2,8 @@
 <url><loc>http://www.shubhamdutta.com/mapindia/404.html</loc></url>
 <url><loc>http://www.shubhamdutta.com/mapindia/LICENSE-text.html</loc></url>
 <url><loc>http://www.shubhamdutta.com/mapindia/LICENSE.html</loc></url>
+<url><loc>http://www.shubhamdutta.com/mapindia/articles/getting_started.html</loc></url>
+<url><loc>http://www.shubhamdutta.com/mapindia/articles/index.html</loc></url>
 <url><loc>http://www.shubhamdutta.com/mapindia/authors.html</loc></url>
 <url><loc>http://www.shubhamdutta.com/mapindia/index.html</loc></url>
 <url><loc>http://www.shubhamdutta.com/mapindia/news/index.html</loc></url>
@@ -18,10 +20,11 @@
 <url><loc>http://www.shubhamdutta.com/mapindia/reference/index.html</loc></url>
 <url><loc>http://www.shubhamdutta.com/mapindia/reference/map_india.html</loc></url>
 <url><loc>http://www.shubhamdutta.com/mapindia/reference/map_with_data.html</loc></url>
+<url><loc>http://www.shubhamdutta.com/mapindia/reference/mapindia-package.html</loc></url>
 <url><loc>http://www.shubhamdutta.com/mapindia/reference/mapindia_crs.html</loc></url>
 <url><loc>http://www.shubhamdutta.com/mapindia/reference/mapindia_transform.html</loc></url>
 <url><loc>http://www.shubhamdutta.com/mapindia/reference/perform_transform.html</loc></url>
-<url><loc>http://www.shubhamdutta.com/mapindia/reference/plot_map.html</loc></url>
+<url><loc>http://www.shubhamdutta.com/mapindia/reference/plot_india.html</loc></url>
 <url><loc>http://www.shubhamdutta.com/mapindia/reference/statepop.html</loc></url>
 <url><loc>http://www.shubhamdutta.com/mapindia/reference/static_merge.html</loc></url>
 <url><loc>http://www.shubhamdutta.com/mapindia/reference/theme_map.html</loc></url>
