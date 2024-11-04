@@ -35,10 +35,11 @@ test_that("correct data is used", {
   p_map_data <- map_india(regions = "districts")
   expect_identical(p$data, p_map_data)
 
-  q_map_data <- map_with_data(statepop, values = "pop_2023")
+  q_map_data <- map_using_data(statepop, values = "pop_2023")
   expect_identical(q$data, q_map_data)
 
-  r_map_data <- map_with_data(example_data)
+  r_map_data <- map_using_data(example_data)
+  r_map_data <- map_using_data(example_data)
   expect_identical(r$data, r_map_data)
 
   s_map_data <- map_india(regions = "states", include = c("UP", "RJ", "NCT"))

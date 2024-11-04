@@ -26,7 +26,7 @@
 #'   input data frame with the World Geodetic System 1984 projection applied.
 #'   The transformed columns will be appended to the data frame so that all
 #'   original columns should remain intact.
-
+#'
 #' @examples
 #' data <- data.frame(
 #'   lon = c(77.10, 88.36, 80.27, 72.87, 77.59, 78.03),
@@ -123,6 +123,9 @@ perform_transform <- function(data, ...) {
 #' coordinates and is commonly used for geographic data.
 #'
 #' @export
+#'
+#' @examples
+#' mapindia_crs()
 mapindia_crs <- function() {
   mapindiatools:::ea_crs()
 }

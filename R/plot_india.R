@@ -90,7 +90,7 @@ plot_india <- function(regions = c("states", "state", "districts", "district"),
     map_df <- mapindia::map_india(regions = regions, include = include, exclude = exclude)
     geom_args[["mapping"]] <- ggplot2::aes()
   } else {
-    map_df <- mapindia::map_with_data(data, values = values, include = include, exclude = exclude)
+    map_df <- mapindia::map_using_data(data, values = values, include = include, exclude = exclude)
 
     if (!is.null(map_df$district)) regions <- "districts"
     geom_args[["mapping"]] <- ggplot2::aes(fill = .data[[values]])

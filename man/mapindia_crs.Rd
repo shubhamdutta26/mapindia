@@ -6,10 +6,18 @@
 \usage{
 mapindia_crs()
 }
+\value{
+An `sf::st_crs` object representing the Coordinate Reference System (CRS)
+for India, specifically EPSG:4326 (WGS 84). This CRS uses latitude and longitude
+coordinates and is commonly used for geographic data.
+}
 \description{
 This coordinate reference system (CRS) represents
 the canonical projection used by the \code{mapindia} package. It can
 be used to transform shape files, spatial points, spatial data
 frames, etc. to the same coordinate representation that is used
 by the \code{plot_india} function.
+}
+\examples{
+mapindia_crs()
 }

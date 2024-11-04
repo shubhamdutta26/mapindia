@@ -24,17 +24,17 @@
 #'
 #' @examples
 #' data_01 <- data.frame(code = c("01", "02", "04"), values = c(1, 5, 8))
-#' df <- map_with_data(data_01, na = 0)
+#' df <- map_using_data(data_01, na = 0)
 #'
 #' data_02 <- data.frame(state = c("AP", "WB", "Tamil Nadu"), values = c(6, 9, 3))
-#' df <- map_with_data(data_02, na = 0)
+#' df <- map_using_data(data_02, na = 0)
 #'
 #' @export
-map_with_data <- function(data,
-                          values = "values",
-                          include = c(),
-                          exclude = c(),
-                          na = NA) {
+map_using_data <- function(data,
+                           values = "values",
+                           include = c(),
+                           exclude = c(),
+                           na = NA) {
 
   # Validate input data frame
   if (!is.data.frame(data)) {
