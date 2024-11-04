@@ -118,6 +118,10 @@ perform_transform <- function(data, ...) {
 #' frames, etc. to the same coordinate representation that is used
 #' by the \code{plot_india} function.
 #'
+#' @return An `sf::st_crs` object representing the Coordinate Reference System (CRS)
+#' for India, specifically EPSG:4326 (WGS 84). This CRS uses latitude and longitude
+#' coordinates and is commonly used for geographic data.
+#'
 #' @export
 mapindia_crs <- function() {
   mapindiatools:::ea_crs()
