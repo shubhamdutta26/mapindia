@@ -46,6 +46,8 @@ Plot a basic map of the Indian subcontinent with states and districts:
 ``` r
 library(mapindia)
 library(ggplot2)
+library(cowplot)
+
 states <- plot_india("states") +
   geom_sf(fill= "antiquewhite") +
   theme(panel.grid.major = 

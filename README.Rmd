@@ -7,6 +7,7 @@ output: github_document
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
+  dpi = 600,
   comment = "#>",
   fig.path = "man/figures/README-",
   out.width = "100%"
@@ -23,8 +24,6 @@ knitr::opts_chunk$set(
 The goal of mapindia is to simplify mapping of the Indian subcontinent. It has convenient functions for plotting choropleths, visualizing spatial data, and handling state/district codes.
 
 **Note:** The 3-digit district codes were merged with the 2-digit state codes to create a 5-digit district code.
-
-
 
 ## Installation
 
@@ -60,6 +59,8 @@ Plot a basic map of the Indian subcontinent with states and districts:
 ```{r states-dist}
 library(mapindia)
 library(ggplot2)
+library(cowplot)
+
 states <- plot_india("states") +
   geom_sf(fill= "antiquewhite") +
   theme(panel.grid.major = 
