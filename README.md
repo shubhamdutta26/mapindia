@@ -41,7 +41,7 @@ library(mapindia)
 
 ## Example
 
-Plot a basic map of the Indian subcontinent with states and districts:
+Plot basic maps of the Indian subcontinent with states and districts:
 
 ``` r
 library(mapindia)

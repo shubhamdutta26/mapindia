@@ -7,7 +7,7 @@ output: github_document
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  dpi = 600,
+  dpi = 200,
   comment = "#>",
   fig.path = "man/figures/README-",
   out.width = "100%"
@@ -30,7 +30,7 @@ The goal of mapindia is to simplify mapping of the Indian subcontinent. It has c
 To install mapindia from CRAN:
 
 ```{r}
-#| label: cran
+#| label: cran-tbd
 #| eval: false
 install.packages("mapindia")
 ```
@@ -54,7 +54,7 @@ library(mapindia)
 
 ## Example
 
-Plot a basic map of the Indian subcontinent with states and districts:
+Plot basic maps of the Indian subcontinent with states and districts:
 
 ```{r states-dist}
 library(mapindia)
