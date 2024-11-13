@@ -10,6 +10,7 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
+  dpi = 600,
   comment = "#>"
 )
 ```
@@ -47,6 +48,7 @@ Plot a basic map of the Indian subcontinent with states and districts:
 ```{r states-dist}
 library(mapindia)
 library(ggplot2)
+library(cowplot)
 
 states <- plot_india("states") +
   geom_sf(fill= "antiquewhite") +
@@ -59,6 +61,8 @@ districts <- plot_india("districts") +
   theme(panel.grid.major = 
           element_line(color = gray(.5), linetype = "dashed", linewidth = 0.2), 
         panel.background = element_rect(fill = "aliceblue"))
+
+cowplot::plot_grid(states, districts, nrow = 1)
 ```
 
 Visualize zones such as the Central or Eastern Zonal Councils:
@@ -68,6 +72,8 @@ central <- plot_india("states", include = .central, exclude = "UK", labels = TRU
   geom_sf(fill= "antiquewhite")
 
 east <- plot_india("states", include = .east, labels = FALSE)
+
+cowplot::plot_grid(central, east, nrow = 1)
 ```
 
 Visualize individual states such as the West Bengal or Tamil Nadu:
@@ -76,6 +82,8 @@ Visualize individual states such as the West Bengal or Tamil Nadu:
 mh <- plot_india("districts", include = "MH")
 
 tn <- plot_india("state", include = "Tamil Nadu", labels = FALSE)
+
+cowplot::plot_grid(mh, tn, nrow = 1)
 ```
 
 Use your data for visualizations as well:
@@ -86,4 +94,6 @@ statepop2011 <- plot_india("states", data = statepop, values = "pop_2011") +
 
 wbpop2011 <- plot_india("districts", data = wb_2011, values = "pop_2011", include = "WB") +
   scale_fill_continuous(low = "green", high = "red", guide = "none")
+
+cowplot::plot_grid(statepop2011, wbpop2011, nrow = 1)
 ```
