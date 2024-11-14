@@ -19,6 +19,9 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/shubhamdutta26/mapindia/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/shubhamdutta26/mapindia/actions/workflows/R-CMD-check.yaml)
 [![Codecov test coverage](https://codecov.io/gh/shubhamdutta26/mapindia/graph/badge.svg)](https://app.codecov.io/gh/shubhamdutta26/mapindia)
+[![CRAN status](https://www.r-pkg.org/badges/version/mapindia)](https://CRAN.R-project.org/package=mapindia)
+[![CRAN downloads badge](https://cranlogs.r-pkg.org/badges/mapindia)](https://cran.r-project.org/package=mapindia)
+[![Grand total CRAN downloads badge](http://cranlogs.r-pkg.org/badges/grand-total/mapindia)](https://cran.r-project.org/package=mapindia)
 <!-- badges: end -->
 
 The goal of mapindia is to simplify mapping of the Indian subcontinent. It has convenient functions for plotting choropleths, visualizing spatial data, and handling state/district codes.
